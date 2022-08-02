@@ -27,10 +27,13 @@ BlogPost.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        // date_created: {
+            
+        // }
     },
     {
         sequelize,
-        timestamps : false,
+        timestamps : true,
         freezeTableName: true,
         underscored: true,
         modelName: 'blogPost',

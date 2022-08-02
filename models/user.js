@@ -34,6 +34,7 @@ User.init(
                 preHash.password = await bcrypt.hash(preHash.password, 10);
                 return preHash;
             },
+            // can add beforeupdate as well if we need to be able to change pass
         },
         sequelize,
         timestamps : false,
