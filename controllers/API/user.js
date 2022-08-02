@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../../models/user');
+const { User } = require('../../models');
 
 // Create new User
 router.post('/', async (req,res) =>{
@@ -25,8 +25,28 @@ router.post('/login', async (req,res) =>{
                 username: req.body.username,
             }
         });
-    }catch(err){
+        if(!userData){
+            res.status(400).json({
+                message: 'Incorrect Username or password'
+            });
+            return;
+        }
+        const checkPass = await userData.checkPassword(req.body.password);
 
+        if(!checkPass){
+            res.status(400).json({
+                message: 'Invalid username or password'
+            });
+            return;
+        }
+        req.session.save(() => {
+            req.session.loggedIn = true;
+        });
+        res.status(200).json({
+            user: userData, message: 'Logged in as'
+        })
+    }catch(err){
+        res.status(500).json(err);
     }
 });
 
