@@ -16,6 +16,5 @@ const userData = [
 
     const userDataA = () => User.bulkCreate(userData, {
         individualHooks: true,
-        returning: true,
       });
     module.exports = userDataA;

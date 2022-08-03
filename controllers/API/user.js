@@ -10,6 +10,8 @@ router.post('/', async (req,res) =>{
         });
         req.session.save(() =>{
             req.session.loggedIn = true;
+            req.session.username = newUser.username;
+            req.session.userId = newUser.id;
             res.status(200).json(newUser);
         })
     }catch(err){
@@ -31,7 +33,7 @@ router.post('/login', async (req,res) =>{
             });
             return;
         }
-        const checkPass = await userData.checkPassword(req.body.password);
+        const checkPass =  userData.checkPassword(req.body.password);
 
         if(!checkPass){
             res.status(400).json({
@@ -41,6 +43,8 @@ router.post('/login', async (req,res) =>{
         }
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.username = userData.username;
+            req.session.userId = userData.id;
         });
         res.status(200).json({
             user: userData, message: 'Logged in as'
