@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class BlogPost extends Model{};
@@ -27,12 +27,16 @@ BlogPost.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        // date_Created:{
+        //     type: DataTypes.DATE,
+        //     allowNull: false,
+        //     defaultValue: DataTypes.NOW
+        // }
     },
     {
         sequelize,
         timestamps : true,
         freezeTableName: true,
-        underscored: true,
         modelName: 'blogPost',
     }
 );

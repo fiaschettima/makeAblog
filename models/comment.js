@@ -30,11 +30,6 @@ Comment.init(
                 key: 'id',
             }
         },
-        // date_created: {
-        //     type: Sequelize.DATE,
-        //     allowNull: false,
-        //     defaultValue: Sequelize.NOW
-        // }
     },
    { sequelize,
     timestamps : true,

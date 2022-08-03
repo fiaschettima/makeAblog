@@ -1,6 +1,5 @@
 <section class="card">
-  <a href="/gallery/{{id}}">
-    <header>{{name}}</header>
-    <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">
-  </a>
+    <header>{{user.username}} <span>{{format_date createdAt}}</span></header>
+    <h1>{{post_title}}</h1>
+    <p>{{post_content}}</p>
 </section>
