@@ -11,9 +11,8 @@ router.get('/',withAuth, async (req,res) => {
             include: User,
             attributes: {exclude: ['password']}    
         });
-        console.log(req.session)
+        
         const blogPost = posts.map((post) =>post.get({plain: true}));
-        console.log(blogPost)
         res.render('dashboard',{
             blogPost,
             loggedIn: req.session.loggedIn
@@ -23,8 +22,7 @@ router.get('/',withAuth, async (req,res) => {
     }
 });
 
-router.get('/dashboard/createNew', withAuth,  (req,res) => {
+router.get('/createNew', withAuth,  (req,res) => {
     res.render('newPost')
-    console.log('form page')
-})
+});
 module.exports = router;
