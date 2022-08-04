@@ -27,11 +27,6 @@ BlogPost.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        // date_Created:{
-        //     type: DataTypes.DATE,
-        //     allowNull: false,
-        //     defaultValue: DataTypes.NOW
-        // }
     },
     {
         sequelize,

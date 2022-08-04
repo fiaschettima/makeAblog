@@ -1,5 +1,7 @@
 <section class="card">
-    <header>{{user.username}} <span>{{format_date createdAt}}</span></header>
-    <h1>{{post_title}}</h1>
-    <p>{{post_content}}</p>
+    <header> <span class="user">{{user.username}} </span> <span class="date">{{format_date createdAt}}</span></header>
+   <div class="card-body"> 
+        <h3>{{post_title}}</h3>
+        <p>{{post_content}}</p>
+    </div>
 </section>

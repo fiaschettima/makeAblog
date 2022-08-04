@@ -30,7 +30,7 @@ a:visited {
 
 header {
   padding: 40px;
-  text-align: center;
+
   background: var(--primary);
   color: var(--light);
 }
@@ -61,21 +61,28 @@ nav a {
   text-align: center;
 }
 
+.profile{
+  color: var(--light);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
 nav a:hover {
   color: var(--secondary);
   background-color: var(--dark);
 }
 
-.gallery {
-  flex: 4;
-  background-color: #fff;
+.containerM {
+  margin: 1em auto auto auto;
   padding: 50px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
 }
-
+.user{
+  margin-right: auto;
+}
+.date{
+  margin-left: auto;
+}
 .btn-no-style {
   background: none;
   border: none;
@@ -99,16 +106,13 @@ img {
   margin-bottom: 25px;
 }
 
-.painting-details {
-  text-align: center;
-  padding: 10px 20px;
-  font-weight: bold;
-}
+
 
 /* CARDS */
 .card {
-  margin: 20px;
-  flex: 0 1 300px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--light);
@@ -140,19 +144,8 @@ img {
 
 .card-body {
   font-size: 1.4rem;
-  text-align: center;
-  font-weight: bold;
-}
+  text-align: left;
 
-.gallery-name {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 5px var(--secondary);
-  border: 10px groove var(--light);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 100px;
-  padding-left: 100px;
 }
 
 /* LAYOUT */

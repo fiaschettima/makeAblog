@@ -11,17 +11,15 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
     secret : 'super secret secret',
-    cookie: {
-        maxAge: 86400,
-    },
+    cookie: {},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
     }),
 };
-const helpHandle = exphbs.create({helpers})
 app.use(session(sess));
+const helpHandle = exphbs.create({helpers});
 app.engine('handlebars', helpHandle.engine);
 app.set('view engine', 'handlebars');
 

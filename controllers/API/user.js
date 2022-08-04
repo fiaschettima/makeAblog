@@ -8,17 +8,23 @@ router.post('/', async (req,res) =>{
             username: req.body.username,
             password: req.body.password,
         });
+        const cleanedUser = newUser.get({plain:true});
         req.session.save(() =>{
-            req.session.loggedIn = true;
-            req.session.username = newUser.username;
-            req.session.userId = newUser.id;
+            req.session.loggedIn = true,
+            req.session.username = cleanedUser.username,
+            req.session.userId = cleanedUser.id,
             res.status(200).json(newUser);
-        })
+        });
     }catch(err){
         res.status(500).json(err);
     }
 });
-
+router.get('/', async (req, res) => {     
+    try {         
+        const userData = await User.findAll();         
+        res.status(200).json(userData);    
+     } catch (err) {                 
+        res.status(500).json(err);     } })
 // Login
 router.post('/login', async (req,res) =>{
     try{
@@ -33,8 +39,9 @@ router.post('/login', async (req,res) =>{
             });
             return;
         }
+        const cleanedUser = userData.get({plain: true})
         const checkPass =  userData.checkPassword(req.body.password);
-
+    console.log(cleanedUser.username)
         if(!checkPass){
             res.status(400).json({
                 message: 'Invalid username or password'
@@ -42,13 +49,11 @@ router.post('/login', async (req,res) =>{
             return;
         }
         req.session.save(() => {
-            req.session.loggedIn = true;
-            req.session.username = userData.username;
-            req.session.userId = userData.id;
+            req.session.loggedIn = true,
+            req.session.username = cleanedUser.username,
+            req.session.userId = cleanedUser.id,
+            res.status(200).json(cleanedUser);
         });
-        res.status(200).json({
-            user: userData, message: 'Logged in as'
-        })
     }catch(err){
         res.status(500).json(err);
     }
