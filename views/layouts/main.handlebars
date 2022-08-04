@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Real Blog</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
@@ -18,7 +19,7 @@
     <a href="/dashboard">Dashboard</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
-    <span class="profile">Logged in as {{user.username}}</span>
+    {{!-- <span class="profile">Logged in as {{user.username}}</span> --}}
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
@@ -29,9 +30,9 @@
     </div>
   </main>
   {{#if loggedIn}}
-  <button class="postBtn">New Post</button>
   <script src="./js/logout.js"></script>
   {{/if}}
+  {{!-- <script src="./js/post_Comment.js"></script> --}}
 </body>
 
 </html>

@@ -22,4 +22,9 @@ router.get('/',withAuth, async (req,res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/dashboard/createNew', withAuth,  (req,res) => {
+    res.render('newPost')
+    console.log('form page')
+})
 module.exports = router;

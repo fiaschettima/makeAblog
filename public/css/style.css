@@ -60,7 +60,15 @@ nav a {
   text-decoration: none;
   text-align: center;
 }
-
+nav button{
+  color: var(--light);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+#newPost{
+  margin-left: auto;
+}
 .profile{
   color: var(--light);
   padding: 14px 20px;
@@ -75,7 +83,6 @@ nav a:hover {
 
 .containerM {
   margin: 1em auto auto auto;
-  padding: 50px;
 }
 .user{
   margin-right: auto;
