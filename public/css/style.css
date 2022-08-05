@@ -161,3 +161,21 @@ img {
   align-content: flex-start;
   align-items: center;
 }
+.newBlog-form{
+  width: 80vw;
+  background-color: var(--secondary);
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px var(--tertiary);
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+}
+.newBlog-form input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--quatrinary);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
