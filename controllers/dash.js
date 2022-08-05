@@ -23,6 +23,8 @@ router.get('/',withAuth, async (req,res) => {
 });
 
 router.get('/createNew', withAuth,  (req,res) => {
-    res.render('newPost')
+    res.render('newPost',{
+      
+    })
 });
 module.exports = router;

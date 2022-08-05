@@ -1,38 +1,90 @@
 # makeAblog
-GIVEN a CMS-style blog site
-WHEN I visit the site for the first time
-THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option
-THEN I am taken to the homepage
-WHEN I click on any other links in the navigation
-THEN I am prompted to either sign up or sign in
-WHEN I choose to sign up
-THEN I am prompted to create a username and password
-WHEN I click on the sign-up button
-THEN my user credentials are saved and I am logged into the site
-WHEN I revisit the site at a later time and choose to sign in
-THEN I am prompted to enter my username and password
-WHEN I am signed in to the site
-THEN I see navigation links for the homepage, the dashboard, and the option to log out
-WHEN I click on the homepage option in the navigation
-THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
-WHEN I click on an existing blog post
-THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
-WHEN I enter a comment and click on the submit button while signed in
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
-WHEN I click on the dashboard option in the navigation
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
-WHEN I click on the button to add a new blog post
-THEN I am prompted to enter both a title and contents for my blog post
-WHEN I click on the button to create a new blog post
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
-WHEN I click on one of my existing posts in the dashboard
-THEN I am able to delete or update my post and taken back to an updated dashboard
-WHEN I click on the logout option in the navigation
-THEN I am signed out of the site
-WHEN I am idle on the site for more than a set time
-THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
-The URL of the functional, deployed application.
+[Link to the Live webpage](https://fiaschettima.github.io/Weather-App-Serverside-Api/)
 
-The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+## Description
+
+
+
+![](./assets/images/workingProductDemo.gif)
+![](./assets/images/workingProductDemoMOBIL.gif)
+
+
+---
+
+Here's a few quick links:
+
+* [Installation](#installation)
+* [Code Snippets](#code-snippets)
+* [Usage](#usage)
+* [Technology used](#technology-used)
+* [learning Points](#learning-points)
+* [Credits](#credits)
+* [License](#license)
+* [Author](#author)
+---
+
+## Installation
+
+To download the raw code of the page follow the steps below:
+1. In the [Weather-App-Serverside-Api](https://github.com/fiaschettima/Weather-App-Serverside-Api/settings/pages) Repository copy the Code               
+2. Open your version of terminal and enter > git clone git@github.com:fiaschettima/Weather-App-Serverside-Api (Just paste the code you copied from previous step)
+3. After that the code is now on your local machine and you are free to copy it to your own repository and make changes
+ ![Ex.S](./assets/images/cloneScreen.png)
+
+
+
+
+---
+
+
+## Code Snippets
+![Code Ex](./assets/images/codeSnippet.png)
+
+This section of code is an example of how to use fetch().then to get information from a URL, which was constructed by inserting variables in 
+to fill out url parameters.
+
+---
+## Usage 
+
+Track weather anywhere and prepare yourself for the weather to come.
+
+---
+## Technology Used
+    
+    Javascript
+    HTML
+    CSS
+   
+ ![image](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+---
+
+## Learning Points
+    This project was an oppurtunity to learn how to use server side API's, in the future I would siimplify my fetch functions by calling functions inside of it. Instead of
+    what I did and which is making one very long function that does everything. I feel doing it by calling on functions improves readability and that is why for future
+    cases I would consider doing that instead.
+---
+## Problems faced
+During this problem I switched back to using normal javascript as opposed to jquery to be sure I was comfortable with both, in doing so i found 
+myself mixing the languages causing some errors. I also found myself wanting to use alot of Jquery's built in commands which were more of a convienence over 
+normal Javascript, which did force me to think a little deeper into how to complete those actions.
+
+---
+## Credits
+
+- [W3 Scools](https://www.w3schools.com/)
+- [MarkDown Guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [Open Weather API's](https://openweathermap.org/)
+- ![image](https://img.shields.io/badge/MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white)
+
+
+---
+## License
+
+    MIT License
+---
+## Author
+    Matthew Fiaschetti 
+
+[Github Profile](https://github.com/fiaschettima)
