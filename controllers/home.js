@@ -16,6 +16,28 @@ router.get('/', async (req,res) => {
         res.status(500).json(err);
     }
 });
+router.get('/blogPost/:id', async (req,res) => {
+    try{
+        const posts = await BlogPost.findByPk(req.params.id,{
+            include: [{model: Comment, include:[{model: User}]},
+        {model: User, attributes: {exclude: ['password']}}]
+            
+        });
+      
+            const blogPost = posts.get({plain: true});
+            const  comments = blogPost.comments
+            console.log(comments)
+            console.log(blogPost)
+        res.render('focusPost',{
+            blogPost,
+            comments,
+            loggedIn: req.session.loggedIn
+        });
+    }catch(err){
+        res.status(500).json(err);
+    }
+});
+
 router.get('/login',  (req,res) => {
     if(req.session.loggedIn){
         res.redirect('/');

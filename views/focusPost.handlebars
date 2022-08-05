@@ -1,0 +1,16 @@
+
+    <section class="card">
+        <header> <span class="user">{{blogPost.user.username}} </span> <span class="date">{{format_date blogPost.createdAt}}</span></header>
+    <div class="card-body"> 
+            <h3>{{blogPost.post_title}}</h3>
+            <p>{{blogPost.post_content}}</p>
+        </div>
+        {{!-- edit --}}
+        <a href=""></a>
+        {{!-- delete --}}
+        <a href=""></a>
+    </section>
+    <h5>Comments:</h5>
+    {{#each comments as |comments|}}
+    {{> comment}}
+    {{/each}}

@@ -14,14 +14,33 @@ router.get('/', async (req,res) => {
     }catch(err){
         res.status(500).json(err)
     }
+});
+
+router.get('/:id', async (req,res) => {
+    try{
+        const commentData = await Comment.findAll({
+            where:{
+                id : req.params.id
+            }
+        });
+        if(!commentData){
+            res.status(404).json({message: 'No Comments for this post'});
+            return;
+        }
+        res.status(200).json(commentData);
+    }catch(err){
+        res.status(500).json(err)
+    }
 })
 // add comment route
 router.post('/', async (req,res) => {
     try{
         const newComment = await Comment.create({
             content: req.body.content,
-            user_id: req.session.user_id,
-            //post_id: same here find where to pull id from
+            // user_id: req.session.user_id,
+            // post_id: req.body.post_id
+            user_id: req.body.user_id,
+            post_id: req.body.post_id
         });
         res.status(200).json(newComment)
     }catch(err){
@@ -56,7 +75,7 @@ router.delete('/:id', async (req,res) => {
             res.status(404).json({message: 'No comment found to delete'});
             return;
         };
-        res.status(200).json({message: 'Comment Deleted'},deletedComment)
+        res.status(200).json(deletedComment)
     }catch(err){
         res.status(500).json(err);
     }

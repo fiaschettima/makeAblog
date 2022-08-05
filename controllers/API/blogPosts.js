@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPost } = require('../../models')
+const { BlogPost, Comment } = require('../../models')
 
 // get all posts
 router.get('/', async (req,res) => {
@@ -17,15 +17,17 @@ router.get('/', async (req,res) => {
 // get one post
 router.get('/:id', async (req,res) => {
     try{
-        const postData = await BlogPost.findByPk({
+        const postData = await BlogPost.findAll({
             where:{
                 id: req.params.id
-            }
-        })
+            },
+      
+        });
+      
         if(!postData){
             res.status(404).json({message: 'Cant find this Posts'})
             return;
-        }
+        };
         res.status(200).json(postData);
     }catch(err){
         res.status(500).json(err);
@@ -50,11 +52,11 @@ router.post('/', async (req,res) => {
     }
 });
 // update post
-router.get('/:id', async (req,res) => {
+router.put('/:id', async (req,res) => {
     try{
         const postData = await BlogPost.update(
-            {     post_title: req.body.post_title,
-                post_content: req.body.post_content
+            {     post_title: req.body.title,
+                post_content: req.body.content
             },
             {where:{id: req.params.id}}
         )
@@ -68,18 +70,18 @@ router.get('/:id', async (req,res) => {
     }
 });
 // delete post
-router.get('/:id', async (req,res) => {
+router.delete('/:id', async (req,res) => {
     try{
-        const postData = await BlogPost.findByPk({
-            where: {
+        const delPost = await BlogPost.destroy({
+            where:{
                 id: req.params.id
             }
         });
-        if(!postData){
-            res.status(404).json({message: 'Post not found'})
+        if(!delPost){
+            res.status(404).json({message: 'No comment found to delete'});
             return;
-        }
-        res.status(200).json({message: 'Post Deleted'},postData)
+        };
+        res.status(200).json(delPost)
     }catch(err){
         res.status(500).json(err);
     }
