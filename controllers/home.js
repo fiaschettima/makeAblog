@@ -26,8 +26,6 @@ router.get('/blogPost/:id', async (req,res) => {
       
             const blogPost = posts.get({plain: true});
             const  comments = blogPost.comments
-            console.log(comments)
-            console.log(blogPost)
         res.render('focusPost',{
             blogPost,
             comments,
