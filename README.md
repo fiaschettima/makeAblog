@@ -9,7 +9,7 @@ More to be added in the future however with the time constraints the features av
 
 Below gif is just to show that all routes do work
 
-![Showing Routes work](./assets/Images/demoRoutes.gif)
+![Showing Routes work](./Assets/Images/demoRoutes.gif)
 
 
 
@@ -44,7 +44,7 @@ To download the raw code of the page follow the steps below:
 
 
 ## Code Snippets
-![Code Ex](./assets/Images/codeSnip.png)
+![Code Ex](./Assets/Images/codeSnip.png)
 
 This section of code is an example of a handlebars rendered layout which is calling on a partials with a file name of comment.handlebars.
 
