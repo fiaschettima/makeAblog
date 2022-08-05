@@ -1,13 +1,16 @@
 # makeAblog
 
-[Link to the Live webpage](https://fiaschettima.github.io/Weather-App-Serverside-Api/)
+[Link to the Live webpage](https://makeablog.herokuapp.com/)
 
 ## Description
 
+This is an attempted website allowing the user to create blog posts, add comments to blog posts, and read others posts. It also requires logging in and out to view certain content.
+More to be added in the future however with the time constraints the features availabe are signing in making a new post and viewing a post and its respective comments.
 
+Below gif is just to show that all routes do work
 
-![](./assets/images/workingProductDemo.gif)
-![](./assets/images/workingProductDemoMOBIL.gif)
+![Showing Routes work](./assets/Images/demoRoutes.gif)
+
 
 
 ---
@@ -27,27 +30,28 @@ Here's a few quick links:
 ## Installation
 
 To download the raw code of the page follow the steps below:
-1. In the [Weather-App-Serverside-Api](https://github.com/fiaschettima/Weather-App-Serverside-Api/settings/pages) Repository copy the Code               
-2. Open your version of terminal and enter > git clone git@github.com:fiaschettima/Weather-App-Serverside-Api (Just paste the code you copied from previous step)
-3. After that the code is now on your local machine and you are free to copy it to your own repository and make changes
- ![Ex.S](./assets/images/cloneScreen.png)
-
-
-
+1. In the [maek A blog](https://github.com/fiaschettima/makeAblog) Repository copy the Code               
+2. Open your version of terminal and enter ``git@github.com:fiaschettima/makeAblog.git``
+3. After that the run the schema.sql to create the database
+4. then run the 2 following commands
+    ``
+    npm i
+    npm run seed
+    ``
+5. Now you can run the command npm run start to use the website on localhost 3001
 
 ---
 
 
 ## Code Snippets
-![Code Ex](./assets/images/codeSnippet.png)
+![Code Ex](./assets/Images/codeSnip.png)
 
-This section of code is an example of how to use fetch().then to get information from a URL, which was constructed by inserting variables in 
-to fill out url parameters.
+This section of code is an example of a handlebars rendered layout which is calling on a partials with a file name of comment.handlebars.
 
 ---
 ## Usage 
 
-Track weather anywhere and prepare yourself for the weather to come.
+Post To a blog or comment on other blogs posts
 
 ---
 ## Technology Used
@@ -55,27 +59,23 @@ Track weather anywhere and prepare yourself for the weather to come.
     Javascript
     HTML
     CSS
+    Handlebars
+    express
    
- ![image](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ---
 
 ## Learning Points
-    This project was an oppurtunity to learn how to use server side API's, in the future I would siimplify my fetch functions by calling functions inside of it. Instead of
-    what I did and which is making one very long function that does everything. I feel doing it by calling on functions improves readability and that is why for future
-    cases I would consider doing that instead.
+    This project was an oppurtunity to learn how to use server handlebars and gain further practice creating backend API controller routes and communicating with the front end from those back end routes.
 ---
 ## Problems faced
-During this problem I switched back to using normal javascript as opposed to jquery to be sure I was comfortable with both, in doing so i found 
-myself mixing the languages causing some errors. I also found myself wanting to use alot of Jquery's built in commands which were more of a convienence over 
-normal Javascript, which did force me to think a little deeper into how to complete those actions.
+
+During this project there were many issues that would come up. Due to the size of the project naming sometimes got mixed up. Also using many new technologies and having them communicate with eachother. 
 
 ---
 ## Credits
 
 - [W3 Scools](https://www.w3schools.com/)
-- [MarkDown Guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- [Open Weather API's](https://openweathermap.org/)
 - ![image](https://img.shields.io/badge/MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white)
 
 
