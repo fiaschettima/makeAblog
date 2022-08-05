@@ -41,7 +41,6 @@ router.post('/login', async (req,res) =>{
         }
         const cleanedUser = userData.get({plain: true})
         const checkPass =  userData.checkPassword(req.body.password);
-    console.log(cleanedUser.username)
         if(!checkPass){
             res.status(400).json({
                 message: 'Invalid username or password'

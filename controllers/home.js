@@ -8,8 +8,6 @@ router.get('/', async (req,res) => {
             attributes: {exclude: ['password']}    
         });
         const blogPost = posts.map((post) =>post.get({plain: true}));
-        // const users = userData.map((project) => project.get({ plain: true }));
-        console.log(blogPost)
         res.render('homepage',{
             blogPost,
             loggedIn: req.session.loggedIn
